@@ -1,0 +1,318 @@
+PS C:\Programming\Python\Projects\PolymarketBOT> python backtest.py --start 2026-03-18T19:36:18.089168+09:00 --end 2026-03-19T12:34:13.476627+09:00
+
+=== Polymarket Backtest Results (Maker Strategy) ===
+Период: 2026-03-18 19:36:18.089168+09:00 - 2026-03-19 12:34:13.476627+09:00
+Параметры: вход @ $0.92, выход win @ $0.98, loss @ $0.9
+Размер сделки: $50.0 USDC
+Комиссии: 0% для maker + rebates (20% от taker fees)
+DEBUG: change=0.021%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.020%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.026%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.012%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.012%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.059%, roc=0.12, momentum=0.20, volume=0.30, conf=0.62
+✅ Свеча 1016: pred=UP (61.9%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.085%, roc=0.17, momentum=0.20, volume=0.15, conf=0.52
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.008%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.003%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.023%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.256%, roc=0.51, momentum=0.20, volume=0.15, conf=0.86
+✅ Свеча 1580: pred=DOWN (86.2%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.204%, roc=0.41, momentum=0.20, volume=0.15, conf=0.76
+✅ Свеча 1583: pred=DOWN (75.8%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.102%, roc=0.20, momentum=0.20, volume=0.30, conf=0.70
+✅ Свеча 1614: pred=DOWN (70.5%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.214%, roc=0.43, momentum=0.00, volume=0.30, conf=0.73
+✅ Свеча 1615: pred=DOWN (72.8%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.377%, roc=0.75, momentum=0.20, volume=0.30, conf=1.00
+✅ Свеча 1616: pred=DOWN (100.0%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.466%, roc=0.93, momentum=0.00, volume=0.15, conf=1.00
+✅ Свеча 1617: pred=DOWN (100.0%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.275%, roc=0.55, momentum=0.20, volume=0.00, conf=0.75
+✅ Свеча 1619: pred=DOWN (75.0%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.163%, roc=0.33, momentum=0.20, volume=0.00, conf=0.53
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.024%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.189%, roc=0.38, momentum=0.20, volume=0.15, conf=0.73
+✅ Свеча 1789: pred=DOWN (72.7%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.011%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.005%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.038%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.002%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.055%, roc=0.11, momentum=0.20, volume=0.30, conf=0.61
+✅ Свеча 2817: pred=DOWN (61.0%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.042%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.044%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.066%, roc=0.13, momentum=0.20, volume=0.30, conf=0.63
+✅ Свеча 3005: pred=DOWN (63.1%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.037%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.031%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.010%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.021%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.005%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.123%, roc=0.25, momentum=0.20, volume=0.15, conf=0.60
+DEBUG: change=0.124%, roc=0.25, momentum=0.20, volume=0.15, conf=0.60
+DEBUG: change=0.170%, roc=0.34, momentum=0.20, volume=0.15, conf=0.69
+✅ Свеча 5351: pred=UP (68.9%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.172%, roc=0.34, momentum=0.20, volume=0.00, conf=0.54
+DEBUG: change=0.040%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.044%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.033%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.038%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.052%, roc=0.10, momentum=0.20, volume=0.30, conf=0.60
+✅ Свеча 5953: pred=DOWN (60.3%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.082%, roc=0.16, momentum=0.20, volume=0.15, conf=0.51
+DEBUG: change=0.058%, roc=0.12, momentum=0.20, volume=0.30, conf=0.62
+✅ Свеча 6398: pred=DOWN (61.5%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.082%, roc=0.16, momentum=0.20, volume=0.15, conf=0.51
+DEBUG: change=0.022%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.015%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.170%, roc=0.34, momentum=0.20, volume=0.00, conf=0.54
+DEBUG: change=0.190%, roc=0.38, momentum=0.20, volume=0.00, conf=0.58
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.043%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.163%, roc=0.33, momentum=0.20, volume=0.00, conf=0.53
+DEBUG: change=0.087%, roc=0.17, momentum=0.20, volume=0.15, conf=0.52
+DEBUG: change=0.150%, roc=0.30, momentum=0.20, volume=0.00, conf=0.50
+DEBUG: change=0.208%, roc=0.42, momentum=0.20, volume=0.00, conf=0.62
+❌ Свеча 7974: pred=UP (61.6%), actual=DOWN
+   Спред: $-1.09, Rebate: +$0.01, Итого: $-1.07, Акций: 54.35
+DEBUG: change=0.152%, roc=0.30, momentum=0.20, volume=0.00, conf=0.50
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.035%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.216%, roc=0.43, momentum=0.20, volume=0.00, conf=0.63
+✅ Свеча 8101: pred=UP (63.2%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.231%, roc=0.46, momentum=0.20, volume=0.00, conf=0.66
+✅ Свеча 8103: pred=UP (66.2%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.076%, roc=0.15, momentum=0.20, volume=0.15, conf=0.50
+DEBUG: change=0.006%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.010%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.002%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.016%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.031%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.039%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.012%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.047%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.024%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.060%, roc=0.12, momentum=0.20, volume=0.30, conf=0.62
+✅ Свеча 10297: pred=DOWN (62.1%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.110%, roc=0.22, momentum=0.20, volume=0.30, conf=0.72
+✅ Свеча 10298: pred=DOWN (72.1%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.062%, roc=0.12, momentum=0.20, volume=0.30, conf=0.62
+✅ Свеча 10460: pred=DOWN (62.3%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.072%, roc=0.14, momentum=0.20, volume=0.30, conf=0.64
+✅ Свеча 10608: pred=UP (64.4%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.026%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.061%, roc=0.12, momentum=0.20, volume=0.30, conf=0.62
+✅ Свеча 10755: pred=DOWN (62.1%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.030%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.002%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.004%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.056%, roc=0.11, momentum=0.20, volume=0.30, conf=0.61
+❌ Свеча 11363: pred=UP (61.2%), actual=DOWN
+   Спред: $-1.09, Rebate: +$0.01, Итого: $-1.07, Акций: 54.35
+DEBUG: change=0.052%, roc=0.10, momentum=0.20, volume=0.30, conf=0.60
+✅ Свеча 11500: pred=UP (60.3%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.062%, roc=0.12, momentum=0.20, volume=0.30, conf=0.62
+✅ Свеча 11648: pred=DOWN (62.3%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.041%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.034%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.024%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.004%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.055%, roc=0.11, momentum=0.20, volume=0.30, conf=0.61
+✅ Свеча 12696: pred=DOWN (61.0%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.083%, roc=0.17, momentum=0.20, volume=0.30, conf=0.67
+✅ Свеча 13161: pred=UP (66.5%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.121%, roc=0.24, momentum=0.20, volume=0.30, conf=0.74
+✅ Свеча 13296: pred=UP (74.3%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.136%, roc=0.27, momentum=0.20, volume=0.30, conf=0.77
+✅ Свеча 13298: pred=UP (77.2%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.190%, roc=0.38, momentum=0.20, volume=0.15, conf=0.73
+✅ Свеча 13299: pred=UP (73.0%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.197%, roc=0.39, momentum=0.20, volume=0.15, conf=0.74
+✅ Свеча 13302: pred=UP (74.4%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.190%, roc=0.38, momentum=0.00, volume=0.15, conf=0.53
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.140%, roc=0.28, momentum=0.20, volume=0.15, conf=0.63
+✅ Свеча 13761: pred=DOWN (63.1%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.105%, roc=0.21, momentum=0.20, volume=0.30, conf=0.71
+✅ Свеча 14199: pred=UP (70.9%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.078%, roc=0.16, momentum=0.20, volume=0.15, conf=0.51
+DEBUG: change=0.179%, roc=0.36, momentum=0.20, volume=0.00, conf=0.56
+DEBUG: change=0.031%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.083%, roc=0.17, momentum=0.20, volume=0.15, conf=0.52
+DEBUG: change=0.165%, roc=0.33, momentum=0.20, volume=0.00, conf=0.53
+DEBUG: change=0.052%, roc=0.10, momentum=0.20, volume=0.30, conf=0.60
+✅ Свеча 15245: pred=UP (60.4%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.011%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.020%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.008%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.015%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.089%, roc=0.18, momentum=0.20, volume=0.30, conf=0.68
+✅ Свеча 15988: pred=DOWN (67.9%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.027%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.148%, roc=0.30, momentum=0.20, volume=0.30, conf=0.80
+✅ Свеча 17052: pred=DOWN (79.6%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.088%, roc=0.18, momentum=0.20, volume=0.30, conf=0.68
+✅ Свеча 17180: pred=UP (67.6%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.077%, roc=0.15, momentum=0.20, volume=0.15, conf=0.50
+DEBUG: change=0.152%, roc=0.30, momentum=0.20, volume=0.00, conf=0.50
+DEBUG: change=0.107%, roc=0.21, momentum=0.20, volume=0.30, conf=0.71
+✅ Свеча 17336: pred=UP (71.5%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.121%, roc=0.24, momentum=0.20, volume=0.15, conf=0.59
+DEBUG: change=0.006%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.021%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.015%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.032%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.005%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.046%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.205%, roc=0.41, momentum=0.20, volume=0.00, conf=0.61
+✅ Свеча 18356: pred=UP (61.0%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.005%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.029%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.015%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.057%, roc=0.11, momentum=0.20, volume=0.30, conf=0.61
+✅ Свеча 18990: pred=UP (61.5%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.003%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.011%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.012%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.013%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.009%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.045%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.066%, roc=0.13, momentum=0.20, volume=0.30, conf=0.63
+✅ Свеча 20706: pred=DOWN (63.2%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.044%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.025%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.006%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.041%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.023%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.042%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.004%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.005%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.026%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.012%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.046%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.016%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.092%, roc=0.18, momentum=0.20, volume=0.30, conf=0.68
+✅ Свеча 22484: pred=DOWN (68.4%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.030%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.016%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.034%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.077%, roc=0.15, momentum=0.20, volume=0.30, conf=0.65
+✅ Свеча 24261: pred=DOWN (65.4%), actual=DOWN
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.096%, roc=0.19, momentum=0.20, volume=0.15, conf=0.54
+DEBUG: change=0.002%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.091%, roc=0.18, momentum=0.20, volume=0.15, conf=0.53
+DEBUG: change=0.019%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.009%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.035%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.013%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.001%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.011%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.026%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.007%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.004%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.024%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.037%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.009%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.019%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.044%, roc=0.09, momentum=0.20, volume=0.30, conf=0.59
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.006%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.006%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.012%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.028%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.018%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.010%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.014%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.025%, roc=0.05, momentum=0.20, volume=0.30, conf=0.55
+DEBUG: change=0.037%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.016%, roc=0.03, momentum=0.20, volume=0.30, conf=0.53
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.003%, roc=0.01, momentum=0.20, volume=0.30, conf=0.51
+DEBUG: change=0.042%, roc=0.08, momentum=0.20, volume=0.30, conf=0.58
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.020%, roc=0.04, momentum=0.20, volume=0.30, conf=0.54
+DEBUG: change=0.032%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.010%, roc=0.02, momentum=0.20, volume=0.30, conf=0.52
+DEBUG: change=0.000%, roc=0.00, momentum=0.20, volume=0.30, conf=0.50
+DEBUG: change=0.031%, roc=0.06, momentum=0.20, volume=0.30, conf=0.56
+DEBUG: change=0.105%, roc=0.21, momentum=0.20, volume=0.15, conf=0.56
+DEBUG: change=0.056%, roc=0.11, momentum=0.20, volume=0.30, conf=0.61
+✅ Свеча 29772: pred=UP (61.2%), actual=UP
+   Спред: $+3.26, Rebate: +$0.01, Итого: $+3.28, Акций: 54.35
+DEBUG: change=0.036%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+DEBUG: change=0.036%, roc=0.07, momentum=0.20, volume=0.30, conf=0.57
+
+=== ИТОГИ ===
+Всего сделок: 44
+Выигрышных: 42 (95.5%)
+Проигрышных: 2 (4.5%)
+Общий PnL: $135.42
+Общие rebates: $0.64
+Средний PnL на сделку: $3.08
+Средний rebate на сделку: $0.01
+ROI: 6.16%
+Risk/Reward ratio: 1.00

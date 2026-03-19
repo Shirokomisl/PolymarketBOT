@@ -1,7 +1,17 @@
 ﻿import json
+from datetime import datetime
 from typing import Any, Dict, Optional
 
 import asyncpg
+
+
+def _json_dumps(value: Any) -> str:
+    def _default(obj: Any) -> str:
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return str(obj)
+
+    return json.dumps(value, default=_default)
 
 
 class Database:
@@ -118,7 +128,7 @@ class Database:
             bid_size,
             ask_size,
             spread,
-            json.dumps(raw),
+            _json_dumps(raw),
         )
 
     async def insert_kline(self, ts, kline: Dict[str, Any]) -> None:
@@ -139,7 +149,7 @@ class Database:
             kline["close"],
             kline["volume"],
             kline["is_closed"],
-            json.dumps(kline),
+            _json_dumps(kline),
         )
 
     async def insert_order_log(self, ts, payload: Dict[str, Any]) -> None:
@@ -162,7 +172,7 @@ class Database:
             payload.get("action"),
             payload.get("status"),
             payload.get("latency_ms"),
-            json.dumps(payload),
+            _json_dumps(payload),
         )
 
     async def insert_trade_log(self, ts, payload: Dict[str, Any]) -> None:
@@ -181,7 +191,7 @@ class Database:
             payload.get("side"),
             payload.get("price"),
             payload.get("size"),
-            json.dumps(payload),
+            _json_dumps(payload),
         )
 
     async def fetch_klines(self, start_ts, end_ts):

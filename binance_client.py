@@ -26,7 +26,7 @@ class BinanceWSClient:
         while not self._stop.is_set():
             try:
                 async with websockets.connect(self.ws_url, ping_interval=20, ping_timeout=20) as ws:
-                    self.logger.info("Binance WS подключен: %s", self.ws_url)
+                    self.logger.info("Binance WS connected: %s", self.ws_url)
                     backoff = 1
                     async for message in ws:
                         if self._stop.is_set():
@@ -49,6 +49,6 @@ class BinanceWSClient:
                         }
                         await self.on_kline(kline)
             except Exception as exc:
-                self.logger.warning("Binance WS ошибка: %s", exc)
+                self.logger.warning("Binance WS error: %s", exc)
                 await asyncio.sleep(backoff)
                 backoff = min(backoff * 2, 30)

@@ -61,6 +61,11 @@ class Config:
     requote_interval_ms: int
     replace_target_ms: int
     dry_run: bool
+    auto_rotate_market: bool
+    btc_5m_prefix: str
+    market_contains: str
+    rotate_check_sec: int
+    heartbeat_sec: int
 
     # Risk
     capital_usdc: float
@@ -85,7 +90,12 @@ class Config:
     polygon_rpc_url: str
     ctf_contract_address: str
     usdc_contract_address: str
-
+    
+    # Prediction settings
+    prediction_lookback_minutes: int = 3  # сколько минут смотрим назад для прогноза
+    momentum_window: int = 2  # окно для расчёта импульса (в свечах по 1 мин)
+    volume_threshold: float = 1.5  # во сколько раз объём должен превышать средний
+    
     @staticmethod
     def load() -> "Config":
         load_dotenv()
@@ -120,12 +130,17 @@ class Config:
             other_side_price=_get_float("OTHER_SIDE_PRICE", 0.05),
             order_usdc_high=_get_float("ORDER_USDC_HIGH", 50.0),
             order_usdc_other=_get_float("ORDER_USDC_OTHER", 10.0),
-            prob_threshold=_get_float("PROB_THRESHOLD", 0.85),
+            prob_threshold=_get_float("PROB_THRESHOLD", 0.60),
             prob_scale=_get_float("PROB_SCALE", 1.0),
             t_minus_seconds=_get_int("T_MINUS_SECONDS", 10),
             requote_interval_ms=_get_int("REQUOTE_INTERVAL_MS", 50),
             replace_target_ms=_get_int("REPLACE_TARGET_MS", 100),
             dry_run=_get_bool("DRY_RUN", True),
+            auto_rotate_market=_get_bool("AUTO_ROTATE_MARKET", False),
+            btc_5m_prefix=os.getenv("BTC_5M_PREFIX", "btc-updown-5m"),
+            market_contains=os.getenv("MARKET_CONTAINS", ""),
+            rotate_check_sec=_get_int("ROTATE_CHECK_SEC", 10),
+            heartbeat_sec=_get_int("HEARTBEAT_SEC", 30),
             capital_usdc=_get_float("CAPITAL_USDC", 1000.0),
             max_position_pct=_get_float("MAX_POSITION_PCT", 0.20),
             stop_loss_pct=_get_float("STOP_LOSS_PCT", 0.02),
@@ -142,4 +157,7 @@ class Config:
             polygon_rpc_url=os.getenv("POLYGON_RPC_URL", ""),
             ctf_contract_address=os.getenv("CTF_CONTRACT_ADDRESS", ""),
             usdc_contract_address=os.getenv("USDC_CONTRACT_ADDRESS", ""),
+            prediction_lookback_minutes=_get_int("PREDICTION_LOOKBACK_MINUTES", 3),
+            momentum_window=_get_int("MOMENTUM_WINDOW", 2),
+            volume_threshold=_get_float("VOLUME_THRESHOLD", 1.5),
         )

@@ -48,7 +48,7 @@ class PolymarketMarketWSClient:
         while not self._stop.is_set():
             try:
                 async with websockets.connect(self.ws_url, ping_interval=None) as ws:
-                    self.logger.info("Polymarket market WS подключен: %s", self.ws_url)
+                    self.logger.info("Polymarket market WS connected: %s", self.ws_url)
                     backoff = 1
                     sub = {
                         "type": "market",
@@ -63,53 +63,62 @@ class PolymarketMarketWSClient:
                             break
                         if message == "PONG":
                             continue
-                        data = json.loads(message)
-                        event_type = data.get("event_type")
-                        asset_id = data.get("asset_id") or data.get("assetId")
-                        if not asset_id:
-                            continue
-
-                        top = OrderBookTop(ts=datetime.now(timezone.utc))
-                        if event_type == "best_bid_ask":
-                            best_bid = data.get("best_bid")
-                            best_ask = data.get("best_ask")
-                            top.best_bid = float(best_bid) if best_bid is not None else None
-                            top.best_ask = float(best_ask) if best_ask is not None else None
-                            top.bid_size = float(data.get("best_bid_size", 0))
-                            top.ask_size = float(data.get("best_ask_size", 0))
-                            spread = data.get("spread")
-                            top.spread = float(spread) if spread is not None else None
-                        elif event_type == "book":
-                            bids = data.get("bids") or []
-                            asks = data.get("asks") or []
-                            if bids:
-                                top.best_bid = float(bids[0].get("price"))
-                                top.bid_size = float(bids[0].get("size"))
-                            if asks:
-                                top.best_ask = float(asks[0].get("price"))
-                                top.ask_size = float(asks[0].get("size"))
-                            if top.best_bid is not None and top.best_ask is not None:
-                                top.spread = top.best_ask - top.best_bid
-                        elif event_type == "price_change":
-                            best_bid = data.get("best_bid")
-                            best_ask = data.get("best_ask")
-                            top.best_bid = float(best_bid) if best_bid is not None else None
-                            top.best_ask = float(best_ask) if best_ask is not None else None
-                            if top.best_bid is not None and top.best_ask is not None:
-                                top.spread = top.best_ask - top.best_bid
-                        elif event_type == "tick_size_change":
-                            tick_size = data.get("tick_size")
-                            top.tick_size = float(tick_size) if tick_size is not None else None
+                        payload = json.loads(message)
+                        if isinstance(payload, list):
+                            for item in payload:
+                                await self._handle_market_message(item)
                         else:
-                            continue
-
-                        await self.on_update(asset_id, event_type, top, data)
+                            await self._handle_market_message(payload)
 
                     ping_task.cancel()
             except Exception as exc:
-                self.logger.warning("Polymarket market WS ошибка: %s", exc)
+                self.logger.warning("Polymarket market WS error: %s", exc)
                 await asyncio.sleep(backoff)
                 backoff = min(backoff * 2, 30)
+
+    async def _handle_market_message(self, data: Any) -> None:
+        if not isinstance(data, dict):
+            return
+        event_type = data.get("event_type")
+        asset_id = data.get("asset_id") or data.get("assetId")
+        if not asset_id:
+            return
+
+        top = OrderBookTop(ts=datetime.now(timezone.utc))
+        if event_type == "best_bid_ask":
+            best_bid = data.get("best_bid")
+            best_ask = data.get("best_ask")
+            top.best_bid = float(best_bid) if best_bid is not None else None
+            top.best_ask = float(best_ask) if best_ask is not None else None
+            top.bid_size = float(data.get("best_bid_size", 0))
+            top.ask_size = float(data.get("best_ask_size", 0))
+            spread = data.get("spread")
+            top.spread = float(spread) if spread is not None else None
+        elif event_type == "book":
+            bids = data.get("bids") or []
+            asks = data.get("asks") or []
+            if bids:
+                top.best_bid = float(bids[0].get("price"))
+                top.bid_size = float(bids[0].get("size"))
+            if asks:
+                top.best_ask = float(asks[0].get("price"))
+                top.ask_size = float(asks[0].get("size"))
+            if top.best_bid is not None and top.best_ask is not None:
+                top.spread = top.best_ask - top.best_bid
+        elif event_type == "price_change":
+            best_bid = data.get("best_bid")
+            best_ask = data.get("best_ask")
+            top.best_bid = float(best_bid) if best_bid is not None else None
+            top.best_ask = float(best_ask) if best_ask is not None else None
+            if top.best_bid is not None and top.best_ask is not None:
+                top.spread = top.best_ask - top.best_bid
+        elif event_type == "tick_size_change":
+            tick_size = data.get("tick_size")
+            top.tick_size = float(tick_size) if tick_size is not None else None
+        else:
+            return
+
+        await self.on_update(asset_id, event_type, top, data)
 
 
 class PolymarketUserWSClient:
@@ -152,7 +161,7 @@ class PolymarketUserWSClient:
         while not self._stop.is_set():
             try:
                 async with websockets.connect(self.ws_url, ping_interval=None) as ws:
-                    self.logger.info("Polymarket user WS подключен: %s", self.ws_url)
+                    self.logger.info("Polymarket user WS connected: %s", self.ws_url)
                     backoff = 1
                     sub = {
                         "type": "user",
@@ -161,8 +170,9 @@ class PolymarketUserWSClient:
                             "secret": self.api_secret,
                             "passphrase": self.api_passphrase,
                         },
-                        "markets": [self.condition_id] if self.condition_id else [],
                     }
+                    if self.condition_id:
+                        sub["markets"] = [self.condition_id]
                     await ws.send(json.dumps(sub))
 
                     ping_task = asyncio.create_task(self._send_ping(ws))
@@ -171,14 +181,23 @@ class PolymarketUserWSClient:
                             break
                         if message == "PONG":
                             continue
-                        data = json.loads(message)
-                        event_type = data.get("event_type")
-                        if not event_type:
-                            continue
-                        await self.on_event(event_type, data)
+                        payload = json.loads(message)
+                        if isinstance(payload, list):
+                            for item in payload:
+                                await self._handle_user_message(item)
+                        else:
+                            await self._handle_user_message(payload)
 
                     ping_task.cancel()
             except Exception as exc:
-                self.logger.warning("Polymarket user WS ошибка: %s", exc)
+                self.logger.warning("Polymarket user WS error: %s", exc)
                 await asyncio.sleep(backoff)
                 backoff = min(backoff * 2, 30)
+
+    async def _handle_user_message(self, data: Any) -> None:
+        if not isinstance(data, dict):
+            return
+        event_type = data.get("event_type")
+        if not event_type:
+            return
+        await self.on_event(event_type, data)

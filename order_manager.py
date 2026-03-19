@@ -1,6 +1,7 @@
 ﻿import asyncio
-from datetime import datetime, time, timezone
+import time
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 import aiohttp
@@ -75,7 +76,7 @@ class OrderManager:
         if not order_ids:
             return
         if self.config.dry_run:
-            self.logger.info("DRY_RUN отмена ордеров: %s", order_ids)
+            self.logger.info("DRY_RUN canceling orders: %s", order_ids)
             return
         await asyncio.to_thread(self.client.cancel_orders, order_ids)
 
@@ -91,7 +92,7 @@ class OrderManager:
                 fee_rates[spec.token_id] = signed_info["fee_rate_bps"]
 
         if self.config.dry_run:
-            self.logger.info("DRY_RUN размещение ордеров: %s", specs)
+            self.logger.info("DRY_RUN placing orders: %s", specs)
             result = {"orders": [], "dry_run": True}
         else:
             post_args = [
@@ -150,7 +151,7 @@ class OrderManager:
         latency_ms = (time.perf_counter() - start) * 1000
         if latency_ms > self.config.replace_target_ms:
             self.logger.warning(
-                "Cancel/replace медленнее цели: %.1fms (target=%sms)",
+                "Cancel/replace slower than target: %.1fms (target=%sms)",
                 latency_ms,
                 self.config.replace_target_ms,
             )
